@@ -1,0 +1,58 @@
+[
+    {
+        "cmd": "list",
+        "aliases": [
+            "在线列表"
+        ],
+        "no_arg": true,
+        "num": 1,
+        "wait_time": 1,
+        "server_tag": "主服",
+        "allow_member": [],
+        "permission": "ALL"
+    },
+    {
+        "cmd": "tps",
+        "aliases": [
+            "运行状态"
+        ],
+        "no_arg": true,
+        "num": 1,
+        "wait_time": 1,
+        "server_tag": "主服",
+        "allow_member": [],
+        "permission": "ADMIN"
+    },
+    {
+        "cmd": "op",
+        "aliases": [],
+        "no_arg": false,
+        "num": 1,
+        "wait_time": 1,
+        "server_tag": "主服",
+        "allow_member": [],
+        "permission": "OP"
+    },
+    {
+        "cmd": "deop",
+        "aliases": [],
+        "no_arg": false,
+        "num": 1,
+        "wait_time": 1,
+        "server_tag": "主服",
+        "allow_member": [],
+        "permission": "OP"
+    },
+    {
+        "cmd": "lp editor",
+        "aliases": [
+            "权限编辑"
+        ],
+        "no_arg": true,
+        "num": 3,
+        "wait_time": 5,
+        "server_tag": "主服",
+        "allow_member": [],
+        "permission": "OP"
+    }
+]

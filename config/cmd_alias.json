@@ -1,0 +1,40 @@
+{
+    "help": {
+        "cmd": "帮助",
+        "aliases": []
+    },
+    "bind_qq": {
+        "cmd": "绑定",
+        "aliases": [
+            "绑定账号"
+        ]
+    },
+    "call_admin": {
+        "cmd": "呼叫管理员",
+        "aliases": []
+    },
+    "get_invitation": {
+        "cmd": "邀请码",
+        "aliases": []
+    },
+    "issue_cmd": {
+        "cmd": "命令",
+        "aliases": []
+    },
+    "query_online": {
+        "cmd": "在线人数",
+        "aliases": []
+    },
+    "say_mc_msg": {
+        "cmd": "服务器",
+        "aliases": []
+    },
+    "tell_mc_msg": {
+        "cmd": "私聊",
+        "aliases": []
+    },
+    "welcome": {
+        "cmd": "欢迎",
+        "aliases": []
+    }
+}

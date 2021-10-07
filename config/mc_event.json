@@ -1,0 +1,11 @@
+{
+    "enable": {
+        "server_start": true,
+        "server_stop": true,
+        "player_join": true,
+        "player_advancement": true,
+        "player_chat": true,
+        "player_quit": true,
+        "player_quit_private": true
+    }
+}

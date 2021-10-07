@@ -1,0 +1,11 @@
+{
+    "enable": false,
+    "blessing_skin_server_mysql": {
+        "host": "127.0.0.1",
+        "port": 3306,
+        "user": "skin",
+        "password": "",
+        "db": "skin"
+    },
+    "initial_chance": 0
+}
