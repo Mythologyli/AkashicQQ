@@ -8,7 +8,7 @@ import utils
 
 
 welcome_msg: str = json.loads(
-    open('./config/text.json', 'r').read())['welcome']['message']
+    open('./config/text.json', 'r', encoding='utf-8').read())['welcome']['message']
 
 group_increase = on_notice()
 

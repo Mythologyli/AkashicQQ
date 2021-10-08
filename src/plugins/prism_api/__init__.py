@@ -5,7 +5,7 @@ from nonebot.log import logger
 import httpx
 
 
-config = json.loads(open('./config/mc_server.json', 'r').read())
+config = json.loads(open('./config/mc_server.json', 'r', encoding='utf-8').read())
 
 
 async def get(api: str, server_tag: str = None):

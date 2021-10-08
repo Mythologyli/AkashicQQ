@@ -6,7 +6,7 @@ from nonebot import logger
 from nonebot.adapters.cqhttp import Bot
 
 
-config = json.loads(open('./config/group.json', 'r').read())
+config = json.loads(open('./config/group.json', 'r', encoding='utf-8').read())
 
 
 async def inform_admin(message: str, member_user_id: int = None):

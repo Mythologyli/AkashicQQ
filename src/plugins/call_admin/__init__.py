@@ -9,10 +9,10 @@ import prism_api
 
 
 not_bind_when_send_msg: str = json.loads(
-    open('./config/text.json', 'r').read())['bind_qq']['not_bind_when_send_msg']
-text: dict = json.loads(open('./config/text.json', 'r').read())['call_admin']
+    open('./config/text.json', 'r', encoding='utf-8').read())['bind_qq']['not_bind_when_send_msg']
+text: dict = json.loads(open('./config/text.json', 'r', encoding='utf-8').read())['call_admin']
 
-cmd_set: dict = json.loads(open('./config/cmd_alias.json', 'r').read())['call_admin']
+cmd_set: dict = json.loads(open('./config/cmd_alias.json', 'r', encoding='utf-8').read())['call_admin']
 call_admin = on_command(cmd_set['cmd'], aliases=set(cmd_set['aliases']))
 
 
@@ -35,7 +35,7 @@ async def handle_call_admin(bot: Bot, event: MessageEvent):
 
     # 检查发送者是否绑定账号
     try:
-        record = json.loads(open('./data/bind_qq.json', 'r').read())
+        record = json.loads(open('./data/bind_qq.json', 'r', encoding='utf-8').read())
     except FileNotFoundError:
         record = {}
 

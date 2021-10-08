@@ -9,11 +9,11 @@ from fastapi import Body, FastAPI
 import prism_api
 
 
-config: dict = json.loads(open('./config/mc_event.json', 'r').read())
-group_config: dict = json.loads(open('./config/group.json', 'r').read())
-text: dict = json.loads(open('./config/text.json', 'r').read())['mc_event']
+config: dict = json.loads(open('./config/mc_event.json', 'r', encoding='utf-8').read())
+group_config: dict = json.loads(open('./config/group.json', 'r', encoding='utf-8').read())
+text: dict = json.loads(open('./config/text.json', 'r', encoding='utf-8').read())['mc_event']
 not_bind_msg_in_game: str = json.loads(
-    open('./config/text.json', 'r').read())['bind_qq']['not_bind_msg_in_game']
+    open('./config/text.json', 'r', encoding='utf-8').read())['bind_qq']['not_bind_msg_in_game']
 
 
 app: FastAPI = nonebot.get_app()
@@ -92,7 +92,7 @@ async def player_join_handler(bot: Bot, data: dict):
 
     # 检测玩家是否绑定账号
     try:
-        record = json.loads(open('./data/bind_qq.json', 'r').read())
+        record = json.loads(open('./data/bind_qq.json', 'r', encoding='utf-8').read())
         players = list(record.values())
     except FileNotFoundError:
         players = []
@@ -115,7 +115,7 @@ async def player_advancement_handler(bot: Bot, data: dict):
     # 检查成就翻译
     try:
         tranlation = json.loads(
-            open('./data/advancement_translation.json', 'r').read())
+            open('./data/advancement_translation.json', 'r', encoding='utf-8').read())
     except FileNotFoundError:
         tranlation = {}
 
@@ -180,7 +180,7 @@ async def player_quit_handler(bot: Bot, data: dict):
     if config['enable']['player_quit_private'] == True:
         # 向本人发送消息，提醒下线
         try:
-            record = json.loads(open('./data/bind_qq.json', 'r').read())
+            record = json.loads(open('./data/bind_qq.json', 'r', encoding='utf-8').read())
         except FileNotFoundError:
             record = {}
 

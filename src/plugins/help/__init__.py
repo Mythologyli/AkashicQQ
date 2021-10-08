@@ -6,9 +6,9 @@ from nonebot import logger
 from nonebot.adapters.cqhttp import Bot, Message, MessageEvent
 
 
-text: dict = json.loads(open('./config/text.json', 'r').read())
+text: dict = json.loads(open('./config/text.json', 'r', encoding='utf-8').read())
 
-cmd_set: dict = json.loads(open('./config/cmd_alias.json', 'r').read())['help']
+cmd_set: dict = json.loads(open('./config/cmd_alias.json', 'r', encoding='utf-8').read())['help']
 help = on_command(cmd_set['cmd'], aliases=set(cmd_set['aliases']))
 
 

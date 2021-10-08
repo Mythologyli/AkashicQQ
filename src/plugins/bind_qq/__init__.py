@@ -8,9 +8,9 @@ import utils
 import prism_api
 
 
-text: dict = json.loads(open('./config/text.json', 'r').read())['bind_qq']
+text: dict = json.loads(open('./config/text.json', 'r', encoding='utf-8').read())['bind_qq']
 
-cmd_set: dict = json.loads(open('./config/cmd_alias.json', 'r').read())['bind_qq']
+cmd_set: dict = json.loads(open('./config/cmd_alias.json', 'r', encoding='utf-8').read())['bind_qq']
 bind_qq = on_command(cmd_set['cmd'], aliases=set(cmd_set['aliases']))
 
 
@@ -33,7 +33,7 @@ async def handle_bind_qq(bot: Bot, event: MessageEvent):
 
     # 检测是否绑定过
     try:
-        record = json.loads(open('./data/bind_qq.json', 'r').read())
+        record = json.loads(open('./data/bind_qq.json', 'r', encoding='utf-8').read())
     except FileNotFoundError:
         record = {}
 

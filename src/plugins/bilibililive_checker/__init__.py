@@ -8,9 +8,9 @@ from nonebot.adapters.cqhttp import Bot, MessageSegment
 import httpx
 
 
-config = json.loads(open('./config/bilibililive_checker.json', 'r').read())
+config = json.loads(open('./config/bilibililive_checker.json', 'r', encoding='utf-8').read())
 text: str = json.loads(
-    open('./config/text.json', 'r').read())['bilibililive_checker']['message']
+    open('./config/text.json', 'r', encoding='utf-8').read())['bilibililive_checker']['message']
 
 live_status = [False for i in range(len(config['liveroom']))]
 

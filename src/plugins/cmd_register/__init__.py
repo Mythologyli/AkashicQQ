@@ -9,8 +9,8 @@ import utils
 import prism_api
 
 
-config: list = json.loads(open('./config/cmd_register.json', 'r').read())
-text: dict = json.loads(open('./config/text.json', 'r').read())['cmd_register']
+config: list = json.loads(open('./config/cmd_register.json', 'r', encoding='utf-8').read())
+text: dict = json.loads(open('./config/text.json', 'r', encoding='utf-8').read())['cmd_register']
 
 cmd_list: list = [one_cmd['cmd'] for one_cmd in config]
 

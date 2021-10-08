@@ -11,11 +11,11 @@ import aiomysql
 import utils
 
 
-config: dict = json.loads(open('./config/get_invitation.json', 'r').read())
+config: dict = json.loads(open('./config/get_invitation.json', 'r', encoding='utf-8').read())
 text: dict = json.loads(
-    open('./config/text.json', 'r').read())['get_invitation']
+    open('./config/text.json', 'r', encoding='utf-8').read())['get_invitation']
 
-cmd_set: dict = json.loads(open('./config/cmd_alias.json', 'r').read())['get_invitation']
+cmd_set: dict = json.loads(open('./config/cmd_alias.json', 'r', encoding='utf-8').read())['get_invitation']
 get_invitation = on_command(cmd_set['cmd'], aliases=set(cmd_set['aliases']))
 
 
@@ -27,7 +27,7 @@ async def handle_get_invitation(bot: Bot, event: MessageEvent):
 
     # 鉴定发起者是否有剩余次数
     try:
-        record = json.loads(open('./data/invitation.json', 'r').read())
+        record = json.loads(open('./data/invitation.json', 'r', encoding='utf-8').read())
     except FileNotFoundError:
         record = {}
 

@@ -8,10 +8,10 @@ import prism_api
 
 
 not_bind_when_send_msg: str = json.loads(
-    open('./config/text.json', 'r').read())['bind_qq']['not_bind_when_send_msg']
-text: dict = json.loads(open('./config/text.json', 'r').read())['tell_mc_msg']
+    open('./config/text.json', 'r', encoding='utf-8').read())['bind_qq']['not_bind_when_send_msg']
+text: dict = json.loads(open('./config/text.json', 'r', encoding='utf-8').read())['tell_mc_msg']
 
-cmd_set: dict = json.loads(open('./config/cmd_alias.json', 'r').read())['tell_mc_msg']
+cmd_set: dict = json.loads(open('./config/cmd_alias.json', 'r', encoding='utf-8').read())['tell_mc_msg']
 tell_mc_msg = on_command(cmd_set['cmd'], aliases=set(cmd_set['aliases']))
 
 
@@ -22,7 +22,7 @@ async def handle_tell_mc_msg(bot: Bot, event: MessageEvent):
     at_msg = MessageSegment.at(user_id) + '\n'
 
     # 检查发送者是否绑定账号
-    record = json.loads(open('./data/bind_qq.json', 'r').read())
+    record = json.loads(open('./data/bind_qq.json', 'r', encoding='utf-8').read())
 
     if str(user_id) not in record:
         logger.info(f"{user_id}试图向服务器私聊消息但未绑定账号，已拒绝")

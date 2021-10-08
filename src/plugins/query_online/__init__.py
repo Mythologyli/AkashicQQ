@@ -7,9 +7,9 @@ from nonebot.adapters.cqhttp import Bot, MessageSegment, MessageEvent
 import prism_api
 
 
-text: dict = json.loads(open('./config/text.json', 'r').read())['query_online']
+text: dict = json.loads(open('./config/text.json', 'r', encoding='utf-8').read())['query_online']
 
-cmd_set: dict = json.loads(open('./config/cmd_alias.json', 'r').read())['query_online']
+cmd_set: dict = json.loads(open('./config/cmd_alias.json', 'r', encoding='utf-8').read())['query_online']
 query_online = on_command(cmd_set['cmd'], aliases=set(cmd_set['aliases']))
 
 

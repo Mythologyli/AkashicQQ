@@ -7,11 +7,11 @@ from nonebot.adapters.cqhttp import Bot, MessageSegment, MessageEvent
 import prism_api
 
 
-op_user: list = json.loads(open('./config/group.json', 'r').read())['op_user']
-text: dict = json.loads(open('./config/text.json', 'r').read())['issue_cmd']
+op_user: list = json.loads(open('./config/group.json', 'r', encoding='utf-8').read())['op_user']
+text: dict = json.loads(open('./config/text.json', 'r', encoding='utf-8').read())['issue_cmd']
 
 cmd_set: dict = json.loads(
-    open('./config/cmd_alias.json', 'r').read())['issue_cmd']
+    open('./config/cmd_alias.json', 'r', encoding='utf-8').read())['issue_cmd']
 issue_cmd = on_command(cmd_set['cmd'], aliases=set(cmd_set['aliases']))
 
 

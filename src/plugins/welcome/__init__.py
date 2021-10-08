@@ -6,9 +6,9 @@ from nonebot.adapters.cqhttp import Bot, Message, MessageEvent
 
 
 welcome_msg: str = json.loads(
-    open('./config/text.json', 'r').read())['welcome']['message']
+    open('./config/text.json', 'r', encoding='utf-8').read())['welcome']['message']
 
-cmd_set: dict = json.loads(open('./config/cmd_alias.json', 'r').read())['welcome']
+cmd_set: dict = json.loads(open('./config/cmd_alias.json', 'r', encoding='utf-8').read())['welcome']
 welcome = on_command(cmd_set['cmd'], aliases=set(cmd_set['aliases']))
 
 
