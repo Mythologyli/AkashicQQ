@@ -55,8 +55,8 @@ async def handle_issue_cmd(bot: Bot, event: MessageEvent):
         server = arg_list[3]
 
         exist_server_tag_list = []
-        for server in prism_api.config['server']:
-            exist_server_tag_list.append(server['tag'])
+        for one_server in prism_api.config['server']:
+            exist_server_tag_list.append(one_server['tag'])
 
         if server not in exist_server_tag_list:
             await issue_cmd.send(at_msg + text['server_tag_not_exist'])
